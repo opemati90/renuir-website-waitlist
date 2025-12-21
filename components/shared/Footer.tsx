@@ -46,19 +46,19 @@ export const Footer = () => {
             <h4 className="text-white font-medium mb-4">Navigation</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="#">Home</Link>
+                <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="#">Features</Link>
+                <Link href="#features">Features</Link>
               </li>
               <li>
-                <Link href="#">How it Works</Link>
+                <Link href="#how-it-works">How it Works</Link>
               </li>
               <li>
-                <Link href="#">About Us</Link>
+                <Link href="#about">About Us</Link>
               </li>
               <li>
-                <Link href="#">Join Waitlist</Link>
+                <Link href="#waitlist">Join Waitlist</Link>
               </li>
             </ul>
           </div>
@@ -67,19 +67,19 @@ export const Footer = () => {
             <h4 className="text-white font-medium mb-4">Support</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="#">Help Center</Link>
+                <Link href="/#faq">Help Center</Link>
               </li>
               <li>
-                <Link href="#">FAQ</Link>
+                <Link href="/#faq">FAQ</Link>
               </li>
               <li>
-                <Link href="#">Contact Support</Link>
+                <Link href="mailto:support@renuir.com">Contact Support</Link>
               </li>
               <li>
-                <Link href="#">Safety Tips</Link>
+                <Link href="/safety">Safety Tips</Link>
               </li>
               <li>
-                <Link href="#">Partner with Us</Link>
+                <Link href="/partner">Partner with Us</Link>
               </li>
             </ul>
           </div>
@@ -90,11 +90,11 @@ export const Footer = () => {
           <span>© 2025 Renuir Inc. All rights reserved.</span>
 
           <div className="flex gap-6">
-            <Link href="#">Imprint</Link>
-            <Link href="#">Privacy Policy</Link>
-            <Link href="#">Cookies</Link>
-            <Link href="#">Terms & Conditions</Link>
-            <Link href="#">Accessibility</Link>
+            <Link href="/imprint">Imprint</Link>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/cookies">Cookies</Link>
+            <Link href="/terms-conditions">Terms & Conditions</Link>
+            <Link href="/accessibility">Accessibility</Link>
           </div>
         </div>
       </div>
