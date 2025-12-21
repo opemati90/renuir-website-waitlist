@@ -16,8 +16,8 @@ const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white fixed w-full z-99">
-      <div className="app-container flex justify-between items-center py-5">
+    <nav className="bg-white fixed w-full z-99 border-b border-primary-50">
+      <div className="app-container flex justify-between items-center py-2">
         <Link href="/">
           <Image
             src={Logo}
