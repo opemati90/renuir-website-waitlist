@@ -97,14 +97,14 @@ export const EarlyAccessSection = () => {
         <p className="mt-4 text-sm text-dark-800">
           By signing up, you agree to our{" "}
           <a
-            href="#"
+            href="/terms-conditions"
             className="underline font-semibold hover:text-primary-600"
           >
             Terms
           </a>{" "}
           and{" "}
           <a
-            href="#"
+            href="/privacy"
             className="underline font-semibold hover:text-primary-600"
           >
             Privacy Policy

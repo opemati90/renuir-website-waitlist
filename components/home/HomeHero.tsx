@@ -77,8 +77,8 @@ const HomeHero = () => {
             whileInView={{ scale: 1 }}
             exit={{ scale: 0 }}
             transition={transition1}
-            src="/images/Hero_image.png"
-            alt="Accelerate Africa's Logo"
+            src="/images/hero.png"
+            alt="renuir image"
             className="max-w-120"
           />
         </div>
