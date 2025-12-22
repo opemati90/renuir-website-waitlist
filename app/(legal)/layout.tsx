@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React from "react";
@@ -11,13 +10,9 @@ import { Footer } from "@/components/shared/Footer";
 
 interface LegalLayoutProps {
   children: React.ReactNode;
-  params: {
-    title?: string;
-    lastUpdated?: string;
-  };
 }
 
-export default function LegalLayout({ children, params }: LegalLayoutProps) {
+export default function LegalLayout({ children }: LegalLayoutProps) {
   const router = useRouter();
 
   const handleBack = () => {
