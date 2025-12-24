@@ -2,18 +2,18 @@
 export const menuItems = [
   {
     name: "How It Works",
-    href: "#how-it-works",
+    href: "/#how-it-works",
   },
   {
     name: "Features",
-    href: "#features",
+    href: "/#features",
   },
   {
     name: "About",
-    href: "#about",
+    href: "/#about",
   },
   {
     name: "FAQ",
-    href: "#faq",
+    href: "/#faq",
   },
 ];

@@ -4,28 +4,28 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-primary-10: #f8f9fa;
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a8a;
-  --color-primary-950: #172554;
-  --color-dark-50: #fafafa;
-  --color-dark-100: #f4f4f5;
-  --color-dark-200: #e4e4e7;
-  --color-dark-300: #d4d4d8;
-  --color-dark-400: #a1a1aa;
-  --color-dark-500: #71717a;
-  --color-dark-600: #52525b;
-  --color-dark-700: #3f3f46;
-  --color-dark-800: #27272a;
-  --color-dark-900: #18181b;
+  --color-primary-10: #fcfdfe;
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #e0effe;
+  --color-primary-200: #bae0fd;
+  --color-primary-300: #7cc7fb;
+  --color-primary-400: #38a9f8;
+  --color-primary-500: #0e8ceb;
+  --color-primary-600: #026dc7;
+  --color-primary-700: #0357a1;
+  --color-primary-800: #074a85;
+  --color-primary-900: #0c3f6e;
+  --color-primary-950: #082849;
+  --color-dark-50: #f9fafb;
+  --color-dark-100: #f3f4f6;
+  --color-dark-200: #e5e7eb;
+  --color-dark-300: #d1d5db;
+  --color-dark-400: #9ca3af;
+  --color-dark-500: #6b7280;
+  --color-dark-600: #4b5563;
+  --color-dark-700: #374151;
+  --color-dark-800: #1f2937;
+  --color-dark-900: #111827;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -66,6 +66,8 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  --color-glass-bg: rgba(255, 255, 255, 0.7);
+  --color-glass-border: rgba(255, 255, 255, 0.3);
 }
 
 :root {
@@ -185,7 +187,19 @@
     margin-inline: auto;
     padding-inline: 1.25rem;
     width: 100%;
-    max-width: 1080px; /* 👈 adjust freely */
+    max-width: 1200px; /* Increased from 1080px for better modern feel */
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-lg border border-white/10 shadow-lg;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-40;
   }
 
   /* Responsive typography utilities */
@@ -194,42 +208,54 @@
   }
 
   .text-responsive-base {
-    @apply text-base sm:text-lg;
+    @apply text-base sm:text-lg lg:text-xl;
   }
 
   .text-responsive-lg {
-    @apply text-lg sm:text-xl md:text-2xl;
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
   }
 
   /* Responsive spacing utilities */
   .spacing-section {
-    @apply space-y-6 sm:space-y-8 md:space-y-10;
+    @apply space-y-24 sm:space-y-32 md:space-y-40;
   }
 
   .spacing-card {
-    @apply p-4 sm:p-6 md:p-8;
+    @apply p-6 sm:p-8 md:p-10;
   }
 
   .spacing-container {
-    @apply px-4 sm:px-6 lg:px-8;
+    @apply px-6 sm:px-10 lg:px-16;
   }
 
   /* Responsive card padding */
   .card-padding {
-    @apply p-6 sm:p-8;
+    @apply p-8 sm:p-10;
   }
 
   /* Responsive heading sizes */
   .heading-1-responsive {
-    @apply text-3xl sm:text-4xl md:text-5xl;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight;
   }
 
   .heading-2-responsive {
-    @apply text-2xl sm:text-3xl md:text-4xl;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
   }
 
   .heading-3-responsive {
-    @apply text-xl sm:text-2xl md:text-3xl;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+
+  /* Reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
