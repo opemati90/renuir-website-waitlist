@@ -261,6 +261,17 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Card hover effects matching HackerRank design */
+  .card-hover {
+    @apply transition-all duration-500;
+  }
+
+  .card-hover:hover {
+    @apply scale-[1.05] -translate-y-1 shadow-xl;
+    border-color: rgba(2, 109, 199, 0.5);
+    box-shadow: 0 20px 25px -5px rgba(2, 109, 199, 0.1), 0 10px 10px -5px rgba(2, 109, 199, 0.04);
+  }
 }
 
 @keyframes pulse-primary {
@@ -271,4 +282,9 @@
   50% {
     background-color: var(--color-primary-300);
   }
+}
+
+/* Hexagon clip-path utility */
+.clip-hexagon {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
 }

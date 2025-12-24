@@ -27,13 +27,13 @@ export const metadata: Metadata = {
 };
 
 const SECTIONS = [
-  { Component: HomeHero, className: "mt-48" },
-  { Component: TrustedByStats, className: "mt-24" },
-  { Component: LostSomething, className: "mt-24" },
-  { Component: TailoredForEveryone, className: "mt-24" },
-  { Component: HomeQuote, className: "mt-24" },
-  { Component: FAQSection, className: "mt-24" },
-  { Component: EarlyAccessSection, className: "mt-24" },
+  { Component: HomeHero, className: "mt-32 md:mt-40 lg:mt-48" },
+  { Component: TrustedByStats, className: "mt-16 md:mt-24 lg:mt-32" },
+  { Component: LostSomething, className: "mt-16 md:mt-24 lg:mt-32" },
+  { Component: TailoredForEveryone, className: "mt-16 md:mt-24 lg:mt-32" },
+  { Component: HomeQuote, className: "mt-16 md:mt-24 lg:mt-32" },
+  { Component: FAQSection, className: "mt-16 md:mt-24 lg:mt-32" },
+  { Component: EarlyAccessSection, className: "mt-16 md:mt-24 lg:mt-32" },
 ];
 
 export default function Home() {

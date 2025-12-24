@@ -11,6 +11,7 @@ import { faqs } from "../utils/data/homeItems";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Variants";
 import { HelpCircle, Mail } from "lucide-react";
+import { Card } from "../ui/Card";
 
 export const FAQSection = () => {
   return (
@@ -58,40 +59,59 @@ export const FAQSection = () => {
             className="space-y-4"
           >
             {faqs.map((faq, index) => (
-              <AccordionItem
+              <motion.div
                 key={index}
-                value={`item-${index}`}
-                className="rounded-2xl border border-white/10 bg-[#141414] px-6 md:px-8 shadow-sm hover:shadow-md hover:border-[#026dc7]/50 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
               >
-                <AccordionTrigger className="text-left text-base md:text-lg font-bold text-white hover:no-underline hover:text-[#026dc7] py-6">
-                  {faq.question}
-                </AccordionTrigger>
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="rounded-2xl border border-white/10 bg-[#141414] px-6 md:px-8 shadow-sm hover:shadow-md hover:border-[#026dc7]/50 transition-all duration-300"
+                >
+                  <AccordionTrigger className="text-left text-base md:text-lg font-bold text-white hover:no-underline hover:text-[#026dc7] py-6">
+                    {faq.question}
+                  </AccordionTrigger>
 
-                <AccordionContent className="text-[#9ca3af] text-base leading-relaxed pb-8">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                  <AccordionContent className="text-[#9ca3af] text-base leading-relaxed pb-8">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
 
           {/* Secondary Footer CTA */}
-          <div className="mt-16 p-8 rounded-3xl bg-[#141414] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <Typography variant="h4" className="text-white font-bold mb-1">
-                Still have questions?
-              </Typography>
-              <Typography variant="smallText" className="text-[#9ca3af] text-sm">
-                We&apos;re here to help you understand our vision.
-              </Typography>
-            </div>
-            <a 
-              href="mailto:contact@renuir.com" 
-              className="flex items-center gap-2 px-6 py-3 bg-[#1a1a1a] border border-white/10 rounded-xl font-bold text-white hover:bg-[#026dc7] hover:border-[#026dc7] transition-colors"
-            >
-              <Mail className="h-4 w-4" />
-              Email Support
-            </a>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-16"
+          >
+            <Card>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="text-center md:text-left">
+                  <Typography variant="h4" className="text-white font-bold mb-1">
+                    Still have questions?
+                  </Typography>
+                  <Typography variant="smallText" className="text-[#9ca3af] text-sm">
+                    We&apos;re here to help you understand our vision.
+                  </Typography>
+                </div>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="mailto:contact@renuir.com" 
+                  className="flex items-center gap-2 px-6 py-3 bg-[#1a1a1a] border border-white/10 rounded-xl font-bold text-white hover:bg-[#026dc7] hover:border-[#026dc7] transition-colors"
+                >
+                  <Mail className="h-4 w-4" />
+                  Email Support
+                </motion.a>
+              </div>
+            </Card>
+          </motion.div>
         </motion.div>
       </div>
     </section>

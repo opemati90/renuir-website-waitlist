@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 import { features } from "../utils/data/homeItems";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "../Variants";
+import { Card } from "../ui/Card";
 
 export const TailoredForEveryone = () => {
   const [audience, setAudience] = useState<"business" | "consumer">("business");
@@ -79,26 +79,33 @@ export const TailoredForEveryone = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                whileHover={{ y: -8 }}
-                className="group p-8 rounded-3xl bg-[#141414] border border-white/10 shadow-sm hover:shadow-xl hover:border-[#026dc7]/50 transition-all duration-500"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
               >
-                <div className="flex flex-col h-full space-y-6">
-                  <div className="flex items-center justify-center h-14 w-14 rounded-2xl bg-[#026dc7]/20 border border-[#026dc7]/30 group-hover:bg-[#026dc7] group-hover:rotate-6 transition-all duration-500 shadow-sm">
-                    <feature.icon className="h-7 w-7 text-[#026dc7] group-hover:text-white transition-colors duration-500" />
-                  </div>
-
-                  <div className="space-y-3">
-                    <Typography variant="h4" className="text-xl font-bold text-white group-hover:text-[#026dc7] transition-colors">
-                      {feature.title}
-                    </Typography>
-                    <Typography
-                      variant="p"
-                      className="text-[#9ca3af] text-[15px] leading-relaxed m-0"
+                <Card className="h-full">
+                  <div className="flex flex-col h-full space-y-6">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      className="flex items-center justify-center h-14 w-14 rounded-2xl bg-[#026dc7]/20 border border-[#026dc7]/30 shadow-sm"
                     >
-                      {feature.description}
-                    </Typography>
+                      <feature.icon className="h-7 w-7 text-[#026dc7]" />
+                    </motion.div>
+
+                    <div className="space-y-3">
+                      <Typography variant="h4" className="text-xl font-bold text-white group-hover:text-[#026dc7] transition-colors">
+                        {feature.title}
+                      </Typography>
+                      <Typography
+                        variant="p"
+                        className="text-[#9ca3af] text-[15px] leading-relaxed m-0"
+                      >
+                        {feature.description}
+                      </Typography>
+                    </div>
                   </div>
-                </div>
+                </Card>
               </motion.div>
             ))}
           </motion.div>

@@ -1,46 +1,45 @@
-import * as React from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { cva, type VariantProps } from "class-variance-authority";
+"use client";
 
+import React from "react";
+import { Star } from "lucide-react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
-  {
-    variants: {
-      variant: {
-        default:
-          "border-transparent bg-primary-700 text-primary-foreground [a&]:hover:bg-primary-700/90",
-        secondary:
-          "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
-        destructive:
-          "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "text-foreground border-primary-400 [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-);
-
-function Badge({
-  className,
-  variant,
-  asChild = false,
-  ...props
-}: React.ComponentProps<"span"> &
-  VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
-  const Comp = asChild ? Slot : "span";
-
-  return (
-    <Comp
-      data-slot="badge"
-      className={cn(badgeVariants({ variant }), className)}
-      {...props}
-    />
-  );
+interface BadgeProps {
+  name: string;
+  stars?: number;
+  className?: string;
 }
 
-export { Badge, badgeVariants };
+export const Badge: React.FC<BadgeProps> = ({ 
+  name, 
+  stars = 3, 
+  className 
+}) => {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.1, rotate: 5 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className={cn(
+        "relative flex flex-col items-center justify-center p-4 cursor-pointer group",
+        className
+      )}
+    >
+      {/* Hexagon shape using clip-path */}
+      <div className="relative w-20 h-20 flex items-center justify-center">
+        <div className="absolute inset-0 bg-[#026dc7]/20 border-2 border-[#026dc7]/40 clip-hexagon group-hover:bg-[#026dc7]/30 group-hover:border-[#026dc7]/60 transition-all duration-300" />
+        <div className="relative z-10 text-center">
+          <div className="text-xs font-bold text-white mb-1">{name}</div>
+          <div className="flex items-center justify-center gap-0.5">
+            {[...Array(stars)].map((_, i) => (
+              <Star
+                key={i}
+                className="h-2.5 w-2.5 fill-[#026dc7] text-[#026dc7]"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};

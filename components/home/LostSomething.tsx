@@ -6,6 +6,7 @@ import { Loststat, times } from "../utils/data/homeItems";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Variants";
+import { Card } from "../ui/Card";
 
 export const LostSomething = () => {
   return (
@@ -39,7 +40,7 @@ export const LostSomething = () => {
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-24 lg:mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-24 lg:mb-32">
           {Loststat.map((stat, index) => (
             <motion.div
               key={index}
@@ -47,45 +48,48 @@ export const LostSomething = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="relative p-10 rounded-3xl bg-[#141414] border border-white/10 shadow-sm hover:shadow-xl hover:-translate-y-2 hover:border-[#026dc7]/50 transition-all duration-500 overflow-hidden group"
             >
-              {/* Step Number Background */}
-              <span className="absolute top-[-10%] right-[-5%] text-9xl font-black text-[#026dc7]/10 group-hover:text-[#026dc7]/20 transition-colors duration-500 select-none">
-                {stat.order}
-              </span>
+              <Card className="relative h-full overflow-hidden group">
+                {/* Step Number Background */}
+                <span className="absolute top-[-10%] right-[-5%] text-9xl font-black text-[#026dc7]/10 group-hover:text-[#026dc7]/20 transition-colors duration-500 select-none pointer-events-none">
+                  {stat.order}
+                </span>
 
-              <div className="relative z-10 flex flex-col h-full">
-                <div
-                  className="flex items-center justify-center h-14 w-14 rounded-2xl bg-[#026dc7]/20 border border-[#026dc7]/30 shadow-sm mb-8 group-hover:scale-110 transition-transform duration-500"
-                >
-                  <stat.icon className="h-7 w-7 text-[#026dc7]" />
-                </div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="flex items-center justify-center h-14 w-14 rounded-2xl bg-[#026dc7]/20 border border-[#026dc7]/30 shadow-sm mb-8"
+                  >
+                    <stat.icon className="h-7 w-7 text-[#026dc7]" />
+                  </motion.div>
 
-                <div className="space-y-4 mb-8 flex-1">
-                  <div className="flex items-center gap-3">
+                  <div className="space-y-4 mb-8 flex-1">
+                    <div className="flex items-center gap-3">
+                      <Typography
+                        variant="smallText"
+                        className="font-bold tracking-widest uppercase text-xs text-[#026dc7]"
+                      >
+                        {stat.tag}
+                      </Typography>
+                    </div>
+                    <Typography variant="h3" className="font-bold text-white leading-tight">
+                      {stat.value}
+                    </Typography>
                     <Typography
-                      variant="smallText"
-                      className="font-bold tracking-widest uppercase text-xs text-[#026dc7]"
+                      variant="p"
+                      className="text-[#9ca3af] font-medium leading-relaxed"
                     >
-                      {stat.tag}
+                      {stat.label}
                     </Typography>
                   </div>
-                  <Typography variant="h3" className="font-bold text-white leading-tight">
-                    {stat.value}
-                  </Typography>
-                  <Typography
-                    variant="p"
-                    className="text-[#9ca3af] font-medium leading-relaxed"
-                  >
-                    {stat.label}
-                  </Typography>
-                </div>
 
-                <div className="flex items-center gap-2 py-3 px-4 rounded-xl bg-[#1a1a1a] w-fit text-[#9ca3af] text-sm font-semibold border border-white/5">
-                  <Clock className="h-4 w-4 text-[#026dc7]" />
-                  <span>{stat.time}</span>
+                  <div className="flex items-center gap-2 py-3 px-4 rounded-xl bg-[#1a1a1a] w-fit text-[#9ca3af] text-sm font-semibold border border-white/5">
+                    <Clock className="h-4 w-4 text-[#026dc7]" />
+                    <span>{stat.time}</span>
+                  </div>
                 </div>
-              </div>
+              </Card>
             </motion.div>
           ))}
         </div>
@@ -104,13 +108,20 @@ export const LostSomething = () => {
 
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:divide-x divide-white/20">
             {times.map((s, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
                 className="flex flex-col items-center text-center px-4"
               >
-                <div className="flex items-center justify-center h-16 w-16 bg-white/10 backdrop-blur-md rounded-2xl mb-6 ring-1 ring-white/20">
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="flex items-center justify-center h-16 w-16 bg-white/10 backdrop-blur-md rounded-2xl mb-6 ring-1 ring-white/20"
+                >
                   <s.icon className="h-8 w-8 text-white" />
-                </div>
+                </motion.div>
 
                 <Typography variant="h2" className="font-bold text-white mb-2 tracking-tight">
                   {s.value}
@@ -122,7 +133,7 @@ export const LostSomething = () => {
                 >
                   {s.label}
                 </Typography>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
