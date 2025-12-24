@@ -98,7 +98,7 @@ const HomeQuote = () => {
                 Operations Director, Horizon Hotels Group
               </Typography>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
