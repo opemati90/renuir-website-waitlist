@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Typography } from "../ui/typography";
-import { Badge } from "../ui/badge";
+import { HexBadge } from "../ui/hex-badge";
 import { CheckCircle2 } from "lucide-react";
 
 interface Certification {
@@ -108,7 +108,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6 + index * 0.1, type: "spring" }}
             >
-              <Badge name={badge.name} stars={badge.stars} />
+              <HexBadge name={badge.name} stars={badge.stars} />
             </motion.div>
           ))}
         </div>

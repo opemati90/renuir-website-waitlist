@@ -1,45 +1,31 @@
 "use client";
 
-import React from "react";
-import { Star } from "lucide-react";
-import { motion } from "framer-motion";
+import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-interface BadgeProps {
-  name: string;
-  stars?: number;
-  className?: string;
+const badgeVariants = cva(
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#026dc7] focus-visible:ring-offset-2",
+  {
+    variants: {
+      variant: {
+        default: "border-transparent bg-[#026dc7] text-white hover:bg-[#0357a1]",
+        secondary: "border-white/10 bg-[#141414] text-white hover:bg-[#1a1a1a]",
+        outline: "border-white/20 text-white bg-transparent hover:bg-white/10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+);
+
+export interface BadgeProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof badgeVariants> {}
+
+export function Badge({ className, variant, ...props }: BadgeProps) {
+  return <div className={cn(badgeVariants({ variant }), className)} {...props} />;
 }
 
-export const Badge: React.FC<BadgeProps> = ({ 
-  name, 
-  stars = 3, 
-  className 
-}) => {
-  return (
-    <motion.div
-      whileHover={{ scale: 1.1, rotate: 5 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className={cn(
-        "relative flex flex-col items-center justify-center p-4 cursor-pointer group",
-        className
-      )}
-    >
-      {/* Hexagon shape using clip-path */}
-      <div className="relative w-20 h-20 flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#026dc7]/20 border-2 border-[#026dc7]/40 clip-hexagon group-hover:bg-[#026dc7]/30 group-hover:border-[#026dc7]/60 transition-all duration-300" />
-        <div className="relative z-10 text-center">
-          <div className="text-xs font-bold text-white mb-1">{name}</div>
-          <div className="flex items-center justify-center gap-0.5">
-            {[...Array(stars)].map((_, i) => (
-              <Star
-                key={i}
-                className="h-2.5 w-2.5 fill-[#fbbf24] text-[#fbbf24]"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
+export { badgeVariants };
