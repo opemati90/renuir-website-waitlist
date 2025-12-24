@@ -3,6 +3,7 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 
 import {
   Form,
@@ -15,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 
-import { Mail } from "lucide-react";
+import { Mail, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Variants";
 
@@ -24,6 +25,9 @@ const formSchema = z.object({
 });
 
 export const EarlyAccessSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -31,12 +35,24 @@ export const EarlyAccessSection = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log("Waitlist email:", values.email);
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
+    try {
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      console.log("Waitlist email:", values.email);
+      setIsSubmitted(true);
+      form.reset();
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <motion.section className="bg-primary-10 py-24">
+    <motion.section id="waitlist" className="bg-primary-10 py-24">
       <motion.div
         variants={fadeIn("down", "tween", 0.2, 0.8)}
         initial="hidden"
@@ -77,7 +93,10 @@ export const EarlyAccessSection = () => {
                       <Input
                         {...field}
                         placeholder="Enter your email"
-                        className="pl-10 h-12 rounded-xl"
+                        className="pl-10 h-12 rounded-xl focus-visible:ring-2 focus-visible:ring-primary-600"
+                        disabled={isSubmitting || isSubmitted}
+                        type="email"
+                        aria-label="Email address for waitlist"
                       />
                     </div>
                   </FormControl>
@@ -89,25 +108,40 @@ export const EarlyAccessSection = () => {
             <Button
               type="submit"
               size="lg"
-              className="h-12 px-6 rounded-xl bg-black hover:bg-dark-400"
+              disabled={isSubmitting || isSubmitted}
+              className="h-12 px-6 rounded-xl bg-black hover:bg-dark-400 disabled:opacity-50"
             >
-              Join waitlist →
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Submitting...
+                </>
+              ) : isSubmitted ? (
+                "✓ Joined!"
+              ) : (
+                "Join the Waitlist →"
+              )}
             </Button>
           </form>
         </Form>
 
+        {isSubmitted && (
+          <p className="mt-4 text-sm text-primary-600 font-medium">
+            Thank you! We&apos;ll notify you when Renuir launches.
+          </p>
+        )}
         <p className="mt-4 text-sm text-dark-800">
           By signing up, you agree to our{" "}
           <a
             href="/terms-conditions"
-            className="underline font-semibold hover:text-primary-600"
+            className="underline font-semibold hover:text-primary-600 focus-visible:outline-2 focus-visible:outline-primary-600 focus-visible:outline-offset-2 rounded"
           >
             Terms
           </a>{" "}
           and{" "}
           <a
             href="/privacy"
-            className="underline font-semibold hover:text-primary-600"
+            className="underline font-semibold hover:text-primary-600 focus-visible:outline-2 focus-visible:outline-primary-600 focus-visible:outline-offset-2 rounded"
           >
             Privacy Policy
           </a>

@@ -123,13 +123,15 @@ export const LostSomething = () => {
           <Typography variant="lead" className=" text-center mt-8">
             Ready to be among the first to use Renuir?
           </Typography>
-          <Button
-            variant="default"
-            size="lg"
-            className="mt-4 shadow-xs shadow-primary-50 flex mx-auto"
-          >
-            Join the Waitlist - It&apos;s Free
-          </Button>
+          <a href="#waitlist">
+            <Button
+              variant="default"
+              size="lg"
+              className="mt-4 shadow-xs shadow-primary-50 flex mx-auto"
+            >
+              Join the Waitlist - It&apos;s Free
+            </Button>
+          </a>
         </motion.div>
       </div>
     </motion.section>

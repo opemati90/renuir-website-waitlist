@@ -26,11 +26,8 @@ export const Footer = () => {
             </p>
 
             <div className="mt-6 text-sm space-y-1">
-              <p>Renuir Inc.</p>
-              <p>123 Innovation Drive, Suite 400</p>
-              <p>San Francisco, CA 94105, USA</p>
+              <p>Renuir</p>
               <p className="mt-3">Email: contact@renuir.com</p>
-              <p>Phone: +1 (555) 123-4567</p>
             </div>
 
             {/* Socials */}
@@ -43,43 +40,40 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-medium mb-4">Navigation</h4>
+            <h4 className="text-white font-medium mb-4">Quick Links</h4>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link href="/">Home</Link>
               </li>
               <li>
+                <Link href="#how-it-works">How It Works</Link>
+              </li>
+              <li>
                 <Link href="#features">Features</Link>
               </li>
               <li>
-                <Link href="#how-it-works">How it Works</Link>
+                <Link href="#about">About</Link>
               </li>
               <li>
-                <Link href="#about">About Us</Link>
+                <Link href="#faq">FAQ</Link>
               </li>
               <li>
-                <Link href="#waitlist">Join Waitlist</Link>
+                <Link href="#waitlist">Join the Waitlist</Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-medium mb-4">Support</h4>
+            <h4 className="text-white font-medium mb-4">Resources</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/#faq">Help Center</Link>
-              </li>
-              <li>
-                <Link href="/#faq">FAQ</Link>
-              </li>
-              <li>
-                <Link href="mailto:support@renuir.com">Contact Support</Link>
+                <Link href="/partner">Partner with Us</Link>
               </li>
               <li>
                 <Link href="/safety">Safety Tips</Link>
               </li>
               <li>
-                <Link href="/partner">Partner with Us</Link>
+                <Link href="mailto:contact@renuir.com">Contact Us</Link>
               </li>
             </ul>
           </div>

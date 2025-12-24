@@ -12,7 +12,7 @@ import { fadeIn } from "../Variants";
 
 export const FAQSection = () => {
   return (
-    <motion.section className="mt-36 ">
+    <motion.section id="faq" className="mt-36 ">
       <motion.div
         variants={fadeIn("down", "tween", 0.2, 0.8)}
         initial="hidden"

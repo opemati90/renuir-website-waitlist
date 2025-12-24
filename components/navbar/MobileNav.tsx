@@ -50,8 +50,8 @@ const MobileNav = () => {
                 />
               </Link>
 
-              <Link href="/login" className="mt-4">
-                <Button variant="outline">Join waitlist</Button>
+              <Link href="#waitlist" className="mt-4">
+                <Button variant="outline">Join the Waitlist</Button>
               </Link>
             </SheetTitle>
 

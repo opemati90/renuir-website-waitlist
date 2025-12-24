@@ -26,11 +26,10 @@ export default function PartnerPage() {
 
       <div className="text-center mb-8">
         <Badge variant="outline" className="mb-4">
-          Partnership Program
+          Partnership Program - Coming Soon
         </Badge>
         <Typography variant="lead" className="mb-6">
-          Join the growing network of businesses and organizations that trust
-          Renuir to streamline their lost-and-found operations.
+          We&apos;re building Renuir to help businesses and organizations streamline their lost-and-found operations. Join our waitlist to be among the first partners when we launch.
         </Typography>
       </div>
 
@@ -178,10 +177,15 @@ export default function PartnerPage() {
       </div>
 
       <div className="text-center mt-4">
-        <Button size="lg" className="mb-4 mt-8">
-          Contact Partnerships Team
-        </Button>
+        <a href="#waitlist">
+          <Button size="lg" className="mb-4 mt-8">
+            Join the Waitlist
+          </Button>
+        </a>
         <Typography variant="lead">Email: partnerships@renuir.com</Typography>
+        <Typography variant="smallText" className="mt-2 text-dark-600">
+          We&apos;ll reach out when we&apos;re ready to onboard partners
+        </Typography>
       </div>
     </>
   );

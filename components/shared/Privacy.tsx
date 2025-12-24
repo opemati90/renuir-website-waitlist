@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       </Typography>
 
       <Typography variant="lead" className="mb-8 italic">
-        Last updated: December 10, 2025
+        Last updated: January 2025
       </Typography>
 
       <div className="prose prose-blue max-w-none space-y-6">
@@ -28,18 +28,18 @@ export default function PrivacyPage() {
               <strong>Personal Data:</strong> We collect personally identifiable
               information, such as your name, email address, and telephone
               number, only when you voluntarily provide it to us (e.g., when
-              joining the waitlist or reporting an item).
+              joining the waitlist). When Renuir launches, we will also collect this information when you report an item.
               <br />
               <br />
-              <strong>Item Data:</strong> When you report a lost or found item,
-              we collect descriptions, images, and location data related to that
+              <strong>Item Data:</strong> When Renuir launches, when you report a lost or found item,
+              we will collect descriptions, images, and location data related to that
               item to facilitate matching.
               <br />
               <br />
               <strong>Automatically Collected Data:</strong> We automatically
               collect certain information when you visit our website, including
               your IP address, browser type, operating system, referring URLs,
-              and information about how you interact with our Service.
+              and information about how you interact with our website.
             </Typography>
           </CardContent>
         </Card>
@@ -53,8 +53,9 @@ export default function PrivacyPage() {
               We use the information we collect to:
             </Typography>
             <ul className="list-disc pl-5 space-y-2 mt-2">
-              <li>Facilitate the matching of lost and found items.</li>
-              <li>Communicate with you regarding your reports or account.</li>
+              <li>Keep you informed about Renuir&apos;s development and launch (for waitlist members).</li>
+              <li>When we launch, facilitate the matching of lost and found items.</li>
+              <li>When we launch, communicate with you regarding your reports or account.</li>
               <li>
                 Improve our AI matching algorithms (using anonymized data).
               </li>
@@ -71,10 +72,10 @@ export default function PrivacyPage() {
               3. Disclosure of Your Information
             </Typography>
             <Typography variant="smallText">
-              We do not sell your personal data. We may share your information
+              We do not sell your personal data. When Renuir launches, we may share your information
               with verified business partners (e.g., the airport or hotel where
               you lost an item) strictly for the purpose of reuniting you with
-              your property. Contact details are only shared after a confirmed
+              your property. Contact details will only be shared after a confirmed
               match and your explicit consent.
             </Typography>
           </CardContent>
@@ -87,8 +88,8 @@ export default function PrivacyPage() {
             </Typography>
             <Typography variant="smallText">
               We retain your personal data only for as long as necessary to
-              fulfill the purposes outlined in this Privacy Policy. Lost and
-              found item reports are retained for up to 90 days after
+              fulfill the purposes outlined in this Privacy Policy. When Renuir launches, lost and
+              found item reports will be retained for up to 90 days after
               resolution. Account information is retained until you request
               deletion.
             </Typography>
@@ -117,13 +118,10 @@ export default function PrivacyPage() {
             </Typography>
             <Typography variant="smallText" className="space-y-2">
               If you have questions about this Privacy Policy or wish to
-              exercise your rights, please contact our Data Protection Officer:
+              exercise your rights, please contact us:
               <br />
               <br />
               Email: privacy@renuir.com
-              <br />
-              Address: Renuir UG (haftungsbeschränkt), Hönower Wiesenweg 57,
-              10318 Berlin, Germany
             </Typography>
           </CardContent>
         </Card>

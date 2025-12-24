@@ -45,8 +45,8 @@ const Nav = () => {
               </Link>
             </div>
           ))}
-          <Link href="/login" className="hidden lg:block">
-            <Button variant="default">Join waitlist</Button>
+          <Link href="#waitlist" className="hidden lg:block">
+            <Button variant="default">Join the Waitlist</Button>
           </Link>
         </div>
 

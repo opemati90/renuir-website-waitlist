@@ -9,8 +9,8 @@ import { TrustedByStats } from "@/components/home/TrustedBy";
 const SECTIONS = [
   { Component: HomeHero, className: "mt-48" },
   { Component: TrustedByStats, className: "mt-24" },
-  { Component: TailoredForEveryone, className: "mt-24" },
   { Component: LostSomething, className: "mt-24" },
+  { Component: TailoredForEveryone, className: "mt-24" },
   { Component: HomeQuote, className: "mt-24" },
   { Component: FAQSection, className: "mt-24" },
   { Component: EarlyAccessSection, className: "mt-24" },

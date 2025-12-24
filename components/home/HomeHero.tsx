@@ -43,14 +43,16 @@ const HomeHero = () => {
               Join our waitlist to be among the first to experience it when we launch.
             </Typography>
             <div className="flex flex-row gap-2 items-center">
-              <Button
-                variant="default"
-                size="lg"
-                className="flex flex-row gap-2 items-center shadow-primary-200 shadow-md "
-              >
-                Join the Waitlist
-                <ArrowRight />
-              </Button>
+              <a href="#waitlist">
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="flex flex-row gap-2 items-center shadow-primary-200 shadow-md "
+                >
+                  Join the Waitlist
+                  <ArrowRight />
+                </Button>
+              </a>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 items-center mt-2">
               <div className="flex flex-row gap-2 items-center">

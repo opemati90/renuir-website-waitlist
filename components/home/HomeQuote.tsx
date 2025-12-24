@@ -7,7 +7,7 @@ import { motion, Variants } from "framer-motion";
 
 const HomeQuote = () => {
   const quoteText =
-    "We're excited about Renuir's vision to transform lost-and-found management. The transparency it will provide and the time it will save is exactly what the industry needs.";
+    "We're excited about Renuir's vision to transform lost-and-found management. The transparency and efficiency it promises is exactly what our industry needs. We're looking forward to being among the first to partner with them.";
   const words = quoteText.split(" ");
 
   const containerVariants: Variants = {

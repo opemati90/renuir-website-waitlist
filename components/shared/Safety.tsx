@@ -17,14 +17,13 @@ export default function SafetyPage() {
       </Typography>
 
       <Typography variant="lead" className="mb-8 italic">
-        Last updated: December 10, 2025
+        Last updated: January 2025
       </Typography>
 
       <Alert className="mb-6 bg-primary-50 border-primary-200">
         <Shield className="h-4 w-4 text-primary-600" />
         <AlertDescription className="text-primary-700">
-          At Renuir, your safety is our top priority. Follow these guidelines
-          for a secure experience.
+          At Renuir, your safety will be our top priority. These guidelines outline how we plan to ensure a secure experience when we launch.
         </AlertDescription>
       </Alert>
 
@@ -117,19 +116,18 @@ export default function SafetyPage() {
           <Typography variant="h3" className="mb-4 text-primary-600">
             Reporting Concerns
           </Typography>
-          <Typography variant="smallText">
-            If you encounter suspicious activity or feel unsafe at any point,
-            please:
-          </Typography>
-          <ul className="list-disc pl-5 space-y-2 mt-2">
-            <li>
-              Report the user or listing through Renuir&apos;s reporting feature
-            </li>
-            <li>Contact our Trust & Safety team at safety@renuir.com</li>
-            <li>
-              If you feel in immediate danger, contact local law enforcement
-            </li>
-          </ul>
+            <Typography variant="smallText">
+              When Renuir launches, if you encounter suspicious activity or feel unsafe at any point, you will be able to:
+            </Typography>
+            <ul className="list-disc pl-5 space-y-2 mt-2">
+              <li>
+                Report the user or listing through Renuir&apos;s reporting feature
+              </li>
+              <li>Contact our Trust & Safety team at safety@renuir.com</li>
+              <li>
+                If you feel in immediate danger, contact local law enforcement
+              </li>
+            </ul>
         </CardContent>
       </Card>
     </>
