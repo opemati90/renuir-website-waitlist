@@ -16,28 +16,28 @@ interface BreadcrumbsProps {
 export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
   return (
     <nav aria-label="Breadcrumb" className="mb-6">
-      <ol className="flex items-center space-x-2 text-sm text-dark-600">
+      <ol className="flex items-center space-x-2 text-sm text-[#9ca3af]">
         <li>
           <Link
             href="/"
-            className="flex items-center hover:text-primary-600 focus-visible:outline-2 focus-visible:outline-primary-600 focus-visible:outline-offset-2 rounded"
+            className="flex items-center hover:text-[#026dc7] focus-visible:outline-2 focus-visible:outline-[#026dc7] focus-visible:outline-offset-2 rounded transition-colors"
             aria-label="Home"
           >
-            <Home className="h-4 w-4" />
+            <Home className="h-4 w-4 text-white" />
           </Link>
         </li>
         {items.map((item, index) => (
           <li key={index} className="flex items-center">
-            <ChevronRight className="h-4 w-4 mx-2 text-dark-400" aria-hidden="true" />
+            <ChevronRight className="h-4 w-4 mx-2 text-[#6b7280]" aria-hidden="true" />
             {item.href && index < items.length - 1 ? (
               <Link
                 href={item.href}
-                className="hover:text-primary-600 focus-visible:outline-2 focus-visible:outline-primary-600 focus-visible:outline-offset-2 rounded"
+                className="hover:text-[#026dc7] focus-visible:outline-2 focus-visible:outline-[#026dc7] focus-visible:outline-offset-2 rounded transition-colors"
               >
-                <Typography variant="smallText">{item.label}</Typography>
+                <Typography variant="smallText" className="text-[#9ca3af]">{item.label}</Typography>
               </Link>
             ) : (
-              <Typography variant="smallText" className="text-dark-800 font-medium">
+              <Typography variant="smallText" className="text-white font-medium">
                 {item.label}
               </Typography>
             )}

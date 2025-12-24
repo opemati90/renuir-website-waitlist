@@ -33,15 +33,15 @@ const MobileNav = () => {
           <button 
             aria-label="Open menu"
             aria-expanded={isSheetOpen}
-            className="focus-visible:outline-2 focus-visible:outline-primary-600 focus-visible:outline-offset-2 rounded-xl p-2 bg-dark-50 border border-dark-100 transition-all hover:bg-dark-100"
+            className="focus-visible:outline-2 focus-visible:outline-[#026dc7] focus-visible:outline-offset-2 rounded-xl p-2 bg-[#141414] border border-white/10 transition-all hover:bg-[#1a1a1a]"
           >
-            <Menu size={24} className="text-dark-900" />
+            <Menu size={24} className="text-white" />
           </button>
         </SheetTrigger>
 
-        <SheetContent side="right" className="w-[85%] sm:w-[400px] border-l border-dark-100 p-0">
-          <div className="flex flex-col h-full bg-white">
-            <SheetHeader className="p-6 border-b border-dark-50">
+        <SheetContent side="right" className="w-[85%] sm:w-[400px] border-l border-white/10 p-0 bg-[#0a0a0a]">
+          <div className="flex flex-col h-full">
+            <SheetHeader className="p-6 border-b border-white/10">
               <div className="flex items-center justify-between">
                 <Link href="/">
                   <Image 
@@ -49,7 +49,7 @@ const MobileNav = () => {
                     alt="Renuir Logo" 
                     width={120}
                     height={34}
-                    className="h-8 w-auto"
+                    className="h-8 w-auto brightness-0 invert"
                     priority
                   />
                 </Link>
@@ -58,7 +58,7 @@ const MobileNav = () => {
 
             <div className="flex-1 overflow-y-auto py-8 px-6">
               <div className="flex flex-col space-y-2">
-                <Typography variant="smallText" className="text-dark-400 font-bold uppercase tracking-widest text-[10px] mb-4">
+                <Typography variant="smallText" className="text-[#9ca3af] font-bold uppercase tracking-widest text-[10px] mb-4">
                   Navigation
                 </Typography>
                 {menuItems.map((item) => {
@@ -71,14 +71,14 @@ const MobileNav = () => {
                       className={clsx(
                         "flex items-center justify-between group p-4 rounded-2xl transition-all duration-200",
                         isActive
-                          ? "bg-primary-50 text-primary-600 font-bold"
-                          : "text-dark-700 hover:bg-dark-50 hover:text-dark-900"
+                          ? "bg-[#026dc7]/20 text-[#026dc7] font-bold border border-[#026dc7]/30"
+                          : "text-[#9ca3af] hover:bg-[#141414] hover:text-white"
                       )}
                     >
                       <span className="text-lg">{item.name}</span>
                       <ArrowRight className={clsx(
                         "h-5 w-5 transition-transform duration-200 group-hover:translate-x-1",
-                        isActive ? "text-primary-600" : "text-dark-300"
+                        isActive ? "text-[#026dc7]" : "text-[#6b7280]"
                       )} />
                     </Link>
                   );
@@ -86,19 +86,19 @@ const MobileNav = () => {
               </div>
 
               <div className="mt-12 space-y-6">
-                <Typography variant="smallText" className="text-dark-400 font-bold uppercase tracking-widest text-[10px] px-4">
+                <Typography variant="smallText" className="text-[#9ca3af] font-bold uppercase tracking-widest text-[10px] px-4">
                   Ready to start?
                 </Typography>
                 <Link href="/#waitlist">
-                  <Button className="w-full h-14 rounded-2xl text-lg font-bold shadow-xl shadow-primary-200">
+                  <Button className="w-full h-14 rounded-2xl text-lg font-bold bg-[#026dc7] hover:bg-[#0357a1] text-white">
                     Join the Waitlist
                   </Button>
                 </Link>
               </div>
             </div>
 
-            <div className="p-8 border-t border-dark-50 bg-dark-50/50">
-              <Typography variant="smallText" className="text-dark-500 block text-center">
+            <div className="p-8 border-t border-white/10 bg-[#141414]">
+              <Typography variant="smallText" className="text-[#9ca3af] block text-center">
                 © 2025 Renuir. Built with AI.
               </Typography>
             </div>

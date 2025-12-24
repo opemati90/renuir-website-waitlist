@@ -12,18 +12,18 @@ export default function NotFound() {
   const router = useRouter();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#0a0a0a]">
       <Nav />
       <main className="flex-1 flex items-center justify-center pt-48 pb-24">
         <div className="app-container text-center max-w-2xl px-4">
           <div className="mb-8">
-            <Typography variant="h1" className="text-8xl md:text-9xl font-bold text-primary-600 mb-4">
+            <Typography variant="h1" className="text-8xl md:text-9xl font-bold text-[#026dc7] mb-4">
               404
             </Typography>
-            <Typography variant="h2" className="text-3xl md:text-4xl font-bold text-black mb-4">
+            <Typography variant="h2" className="text-3xl md:text-4xl font-bold text-white mb-4">
               Page Not Found
             </Typography>
-            <Typography variant="h4" className="text-dark-700 mb-8 max-w-lg mx-auto">
+            <Typography variant="h4" className="text-[#9ca3af] mb-8 max-w-lg mx-auto">
               Oops! The page you&apos;re looking for seems to have gotten lost. 
               Don&apos;t worry, we&apos;ll help you find your way back.
             </Typography>
@@ -53,12 +53,12 @@ export default function NotFound() {
             </Button>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <Typography variant="smallText" className="text-dark-600">
+          <div className="mt-12 pt-8 border-t border-white/10">
+            <Typography variant="smallText" className="text-[#9ca3af]">
               If you believe this is an error, please{" "}
               <a 
                 href="mailto:contact@renuir.com" 
-                className="text-primary-600 hover:text-primary-700 underline font-semibold"
+                className="text-[#026dc7] hover:text-[#38a9f8] underline font-semibold transition-colors"
               >
                 contact us
               </a>

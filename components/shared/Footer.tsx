@@ -5,7 +5,7 @@ import Logo from "@/public/images/renuir-white.svg";
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#020817] text-gray-400 border-t border-white/5">
+    <footer className="bg-[#0a0a0a] text-[#9ca3af] border-t border-white/10">
       <div className="app-container py-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8">
           {/* Logo and Info */}
@@ -20,7 +20,7 @@ export const Footer = () => {
               />
             </Link>
 
-            <p className="max-w-md text-base leading-relaxed text-dark-300">
+            <p className="max-w-md text-base leading-relaxed text-[#9ca3af]">
               Renuir is an AI-powered lost & found platform currently in development. 
               We&apos;re redefining how items are matched and returned through 
               intelligent automation and secure verification.
@@ -36,7 +36,7 @@ export const Footer = () => {
                 <a
                   key={i}
                   href={social.href}
-                  className="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all duration-300 group"
+                  className="h-10 w-10 rounded-xl bg-[#141414] border border-white/10 flex items-center justify-center hover:bg-[#026dc7] hover:border-[#026dc7] hover:text-white transition-all duration-300 group"
                 >
                   <social.icon className="h-5 w-5 group-hover:scale-110 transition-transform" />
                 </a>
@@ -58,7 +58,7 @@ export const Footer = () => {
                 <li key={link.name}>
                   <Link 
                     href={link.href}
-                    className="text-dark-400 hover:text-white transition-colors flex items-center group"
+                    className="text-[#9ca3af] hover:text-white transition-colors flex items-center group"
                   >
                     <span>{link.name}</span>
                     <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 group-hover:opacity-100 transition-all -translate-y-1 group-hover:translate-y-0" />
@@ -72,25 +72,25 @@ export const Footer = () => {
           <div className="md:col-span-4">
             <h4 className="text-white font-bold text-lg mb-8 tracking-tight">Stay Connected</h4>
             <div className="space-y-6">
-              <p className="text-sm text-dark-400">
+              <p className="text-sm text-[#9ca3af]">
                 Have questions or interested in partnering? Reach out to our team.
               </p>
               <a 
                 href="mailto:contact@renuir.com"
-                className="flex items-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-primary-500/50 hover:bg-white/10 transition-all group"
+                className="flex items-center gap-3 p-4 rounded-2xl bg-[#141414] border border-white/10 hover:border-[#026dc7]/50 hover:bg-[#1a1a1a] transition-all group"
               >
-                <div className="h-10 w-10 rounded-xl bg-primary-600 flex items-center justify-center text-white">
+                <div className="h-10 w-10 rounded-xl bg-[#026dc7] flex items-center justify-center text-white">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-dark-500 uppercase font-bold tracking-widest">Email Us</div>
+                  <div className="text-xs text-[#9ca3af] uppercase font-bold tracking-widest">Email Us</div>
                   <div className="text-white font-bold">contact@renuir.com</div>
                 </div>
               </a>
               <div className="pt-4">
                 <Link 
                   href="/partner" 
-                  className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 font-bold"
+                  className="inline-flex items-center gap-2 text-[#026dc7] hover:text-[#38a9f8] font-bold"
                 >
                   Explore Partnerships
                   <ArrowRight className="h-4 w-4" />
@@ -101,8 +101,8 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/5 mt-20 pt-10 flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm text-dark-500">
+        <div className="border-t border-white/10 mt-20 pt-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-sm text-[#9ca3af]">
             <span>© 2025 Renuir. All rights reserved.</span>
             <div className="flex gap-6">
               {[
@@ -122,9 +122,9 @@ export const Footer = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20">
-            <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-xs font-bold text-green-400 tracking-widest uppercase">System Status: Online</span>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#026dc7]/10 border border-[#026dc7]/20">
+            <div className="h-2 w-2 rounded-full bg-[#026dc7] animate-pulse" />
+            <span className="text-xs font-bold text-[#026dc7] tracking-widest uppercase">System Status: Online</span>
           </div>
         </div>
       </div>

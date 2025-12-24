@@ -42,22 +42,22 @@ export default function LegalLayout({ children }: LegalLayoutProps) {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-[#0a0a0a] min-h-screen">
       <Nav />
       <div className="pt-32 sm:pt-40 md:pt-48 pb-12 sm:pb-16 md:pb-24">
         <div className="app-container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="mb-6 sm:mb-8">
             <Breadcrumbs items={getBreadcrumbs()} />
           </div>
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none prose-invert prose-headings:text-white prose-p:text-[#9ca3af] prose-strong:text-white prose-a:text-[#026dc7] prose-a:no-underline hover:prose-a:underline prose-li:text-[#9ca3af]">
             {children}
           </div>
 
-          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
+          <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/10">
             <Button
               variant="link"
               onClick={handleBack}
-              className="flex items-center gap-2 text-sm sm:text-base"
+              className="flex items-center gap-2 text-sm sm:text-base text-[#026dc7] hover:text-[#38a9f8]"
             >
               <ArrowLeft className="h-4 w-4" />
               Back

@@ -11,7 +11,7 @@ export const TailoredForEveryone = () => {
   const [audience, setAudience] = useState<"business" | "consumer">("business");
 
   return (
-    <section className="bg-white section-padding" id="features">
+    <section className="bg-[#0a0a0a] section-padding" id="features">
       <div className="app-container">
         {/* Header */}
         <div className="flex flex-col items-center mb-16 md:mb-20 text-center max-w-3xl mx-auto">
@@ -24,33 +24,33 @@ export const TailoredForEveryone = () => {
           >
             <Typography
               variant="h6"
-              className="text-primary-600 font-bold uppercase tracking-[0.2em]"
+              className="text-[#026dc7] font-bold uppercase tracking-[0.2em]"
             >
               Tailored Experience
             </Typography>
-            <Typography variant="h2" className="text-dark-900">
+            <Typography variant="h2" className="text-white">
               Solutions for Everyone
             </Typography>
             <Typography
               variant="lead"
-              className="text-dark-600 font-medium"
+              className="text-[#9ca3af] font-medium"
             >
               Whether you&apos;re a business managing high volumes or an individual who just lost their keys, Renuir simplifies everything.
             </Typography>
           </motion.div>
 
           {/* Custom Animated Toggle */}
-          <div className="relative mt-12 p-1.5 bg-dark-50 rounded-2xl border border-dark-100 flex items-center shadow-inner">
+          <div className="relative mt-12 p-1.5 bg-[#141414] rounded-2xl border border-white/10 flex items-center shadow-inner">
             <motion.div
               layout
-              className="absolute h-[calc(100%-12px)] w-[calc(50%-6px)] bg-white rounded-xl shadow-md z-0"
+              className="absolute h-[calc(100%-12px)] w-[calc(50%-6px)] bg-[#026dc7] rounded-xl z-0"
               animate={{ x: audience === "business" ? 0 : "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             />
             <button
               onClick={() => setAudience("business")}
               className={`relative z-10 flex-1 px-8 py-3 text-sm font-bold transition-colors duration-200 ${
-                audience === "business" ? "text-primary-600" : "text-dark-500 hover:text-dark-700"
+                audience === "business" ? "text-white" : "text-[#9ca3af] hover:text-white"
               }`}
             >
               For Business
@@ -58,7 +58,7 @@ export const TailoredForEveryone = () => {
             <button
               onClick={() => setAudience("consumer")}
               className={`relative z-10 flex-1 px-8 py-3 text-sm font-bold transition-colors duration-200 ${
-                audience === "consumer" ? "text-primary-600" : "text-dark-500 hover:text-dark-700"
+                audience === "consumer" ? "text-white" : "text-[#9ca3af] hover:text-white"
               }`}
             >
               For Consumers
@@ -80,20 +80,20 @@ export const TailoredForEveryone = () => {
               <motion.div
                 key={index}
                 whileHover={{ y: -8 }}
-                className="group p-8 rounded-[2rem] bg-white border border-dark-100 shadow-sm hover:shadow-xl hover:border-primary-100 transition-all duration-500"
+                className="group p-8 rounded-3xl bg-[#141414] border border-white/10 shadow-sm hover:shadow-xl hover:border-[#026dc7]/50 transition-all duration-500"
               >
                 <div className="flex flex-col h-full space-y-6">
-                  <div className="flex items-center justify-center h-14 w-14 rounded-2xl bg-primary-50 group-hover:bg-primary-600 group-hover:rotate-6 transition-all duration-500 shadow-sm group-hover:shadow-primary-200">
-                    <feature.icon className="h-7 w-7 text-primary-600 group-hover:text-white transition-colors duration-500" />
+                  <div className="flex items-center justify-center h-14 w-14 rounded-2xl bg-[#026dc7]/20 border border-[#026dc7]/30 group-hover:bg-[#026dc7] group-hover:rotate-6 transition-all duration-500 shadow-sm">
+                    <feature.icon className="h-7 w-7 text-[#026dc7] group-hover:text-white transition-colors duration-500" />
                   </div>
 
                   <div className="space-y-3">
-                    <Typography variant="h4" className="text-xl font-bold text-dark-900 group-hover:text-primary-700 transition-colors">
+                    <Typography variant="h4" className="text-xl font-bold text-white group-hover:text-[#026dc7] transition-colors">
                       {feature.title}
                     </Typography>
                     <Typography
                       variant="p"
-                      className="text-dark-500 text-[15px] leading-relaxed m-0"
+                      className="text-[#9ca3af] text-[15px] leading-relaxed m-0"
                     >
                       {feature.description}
                     </Typography>
@@ -112,12 +112,12 @@ export const TailoredForEveryone = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50/50 rounded-full border border-blue-100">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#026dc7]/10 rounded-full border border-[#026dc7]/20">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#026dc7] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#026dc7]"></span>
             </span>
-            <Typography variant="smallText" className="text-blue-700 font-semibold tracking-wide uppercase text-[10px]">
+            <Typography variant="smallText" className="text-[#026dc7] font-semibold tracking-wide uppercase text-[10px]">
               Coming Soon to venues and individuals worldwide
             </Typography>
           </div>

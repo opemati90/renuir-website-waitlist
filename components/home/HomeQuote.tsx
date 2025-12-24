@@ -37,13 +37,7 @@ const HomeQuote = () => {
   };
 
   return (
-    <section className="bg-dark-900 section-padding relative overflow-hidden" id="about">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-primary-600 rounded-full blur-[150px]" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-800 rounded-full blur-[150px]" />
-      </div>
-
+    <section className="bg-[#0a0a0a] section-padding relative overflow-hidden" id="about">
       <div className="app-container relative z-10">
         <div className="flex flex-col items-center max-w-5xl mx-auto">
           <motion.div
@@ -51,9 +45,9 @@ const HomeQuote = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-12 p-4 bg-white/5 backdrop-blur-sm rounded-2xl ring-1 ring-white/10"
+            className="mb-12 p-4 bg-[#141414] backdrop-blur-sm rounded-2xl ring-1 ring-white/10"
           >
-            <Quote className="h-8 w-8 text-primary-400 fill-primary-400/20" />
+            <Quote className="h-8 w-8 text-[#026dc7] fill-[#026dc7]/20" />
           </motion.div>
 
           <motion.div
@@ -86,7 +80,7 @@ const HomeQuote = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="flex flex-col items-center text-center space-y-4"
           >
-            <div className="h-px w-16 bg-gradient-to-r from-transparent via-primary-400 to-transparent" />
+            <div className="h-px w-16 bg-gradient-to-r from-transparent via-[#026dc7] to-transparent" />
             <div className="space-y-1">
               <Typography
                 variant="h4"
@@ -94,7 +88,7 @@ const HomeQuote = () => {
               >
                 Sarah Jenkins
               </Typography>
-              <Typography variant="smallText" className="text-primary-300 text-sm md:text-base font-medium uppercase tracking-widest">
+              <Typography variant="smallText" className="text-[#026dc7] text-sm md:text-base font-medium uppercase tracking-widest">
                 Operations Director, Horizon Hotels Group
               </Typography>
             </div>
