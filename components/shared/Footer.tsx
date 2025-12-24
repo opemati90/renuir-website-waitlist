@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Twitter, Linkedin, Instagram, Facebook, ArrowUpRight, Mail } from "lucide-react";
+import { Twitter, Linkedin, Instagram, Facebook, ArrowUpRight, ArrowRight, Mail } from "lucide-react";
 import Image from "next/image";
 import Logo from "@/public/images/renuir-white.svg";
 
