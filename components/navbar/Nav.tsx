@@ -21,9 +21,11 @@ const Nav = () => {
         <Link href="/">
           <Image
             src={Logo}
-            alt="Accelerate Africa's Logo"
-            width={120}
-            className="w-27.5 sm:w-60"
+            alt="Renuir Logo"
+            width={140}
+            height={40}
+            className="h-8 w-auto sm:h-10"
+            priority
           />
         </Link>
 

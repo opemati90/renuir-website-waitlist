@@ -12,17 +12,17 @@ export const Footer = () => {
             <div className="flex items-center gap-2 mb-4 text-white font-semibold">
               <Image
                 src={Logo}
-                alt="Accelerate Africa's Logo"
-                width={120}
-                className="w-27.5 sm:w-40"
+                alt="Renuir Logo"
+                width={140}
+                height={40}
+                className="h-8 w-auto sm:h-10"
               />
             </div>
 
             <p className="max-w-md text-sm leading-relaxed">
-              Renuir is a trusted platform connecting finders and owners of lost
-              items, making it easy to reunite people with their belongings. We
-              provide a secure, efficient way for individuals to report, find,
-              and return lost items, using smart matching and AI technology.
+              Renuir is an AI-powered lost & found platform currently in development. 
+              Join our waitlist to be notified when we launch and help reunite people 
+              with their lost belongings through smart matching technology.
             </p>
 
             <div className="mt-6 text-sm space-y-1">

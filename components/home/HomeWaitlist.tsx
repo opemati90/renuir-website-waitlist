@@ -45,18 +45,20 @@ export const EarlyAccessSection = () => {
         className="app-container max-w-3xl text-center"
       >
         <div className="inline-flex items-center rounded-full border border-border shadow-xs px-3 py-2">
-          <div className="h-2.5 w-2.5 rounded-full animate-[pulse-primary_1.2s_ease-in-out_infinite]" />
+          <div className="h-2.5 w-2.5 rounded-full animate-[pulse-primary_1.2s_ease-in-out_infinite] bg-primary-600" />
 
           <span className="ml-2 text-sm font-medium text-foreground">
-            Launching soon
+            Launching Soon
           </span>
         </div>
         <Typography variant="h1" className="font-bold text-black mb-3">
-          Get early access
+          Join the Waitlist
         </Typography>
 
-        <Typography variant="h4" className=" mb-10">
-          Be the first to know when we launch. No spam, just updates.
+        <Typography variant="h4" className=" mb-10 text-dark-700">
+          Renuir is currently under development. Be among the first to experience 
+          our AI-powered lost & found platform when we launch. No spam, just updates 
+          on our progress and early access when we&apos;re ready.
         </Typography>
 
         <Form {...form}>

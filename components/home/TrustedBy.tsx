@@ -15,7 +15,7 @@ export const TrustedByStats = () => {
           variant="h6"
           className="text-center text-dark-500 font-bold uppercase tracking-wide mb-10"
         >
-          Trusted by thousands
+          Join the waitlist
         </Typography>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

@@ -19,15 +19,16 @@ export const LostSomething = () => {
           className="flex flex-col gap-4 justify-center items-center"
         >
           <Typography variant="h2" className="text-center  font-bold mb-4">
-            Lost something important?
+            How Renuir Will Work
           </Typography>
 
           <Typography
             variant="h4"
             className="text-center text-dark-800 max-w-2xl mx-auto mb-14 font-medium"
           >
-            We know how stressful it is. That&apos;s why we made getting it back
-            as simple as possible.
+            We know how stressful losing something important can be. That&apos;s why 
+            we&apos;re building Renuir to make getting it back as simple as possible. 
+            Here&apos;s what to expect when we launch.
           </Typography>
         </motion.div>
 
@@ -120,14 +121,14 @@ export const LostSomething = () => {
           className="flex flex-col gap-4 justify-center items-center"
         >
           <Typography variant="lead" className=" text-center mt-8">
-            Ready to find waht you&apos;ve lost?
+            Ready to be among the first to use Renuir?
           </Typography>
           <Button
             variant="default"
             size="lg"
             className="mt-4 shadow-xs shadow-primary-50 flex mx-auto"
           >
-            Join the waitlist - It&apos;s free
+            Join the Waitlist - It&apos;s Free
           </Button>
         </motion.div>
       </div>

@@ -21,10 +21,10 @@ const HomeHero = () => {
         >
           <div className="flex flex-col gap-6 items-start">
             <div className="inline-flex items-center rounded-full border border-border shadow-xs px-3 py-2">
-              <div className="h-2.5 w-2.5 rounded-full animate-[pulse-primary_1.2s_ease-in-out_infinite]" />
+              <div className="h-2.5 w-2.5 rounded-full animate-[pulse-primary_1.2s_ease-in-out_infinite] bg-primary-600" />
 
               <span className="ml-2 text-sm font-medium text-foreground">
-                Waitlist Now open
+                Coming Soon - Join the Waitlist
               </span>
             </div>
             <div className="flex flex-col gap-1 mt-4">
@@ -39,8 +39,8 @@ const HomeHero = () => {
               variant="h4"
               className="text-dark-700 mt-3 leading-8 max-w-lg font-normal"
             >
-              The AI-powered lost & found that actually works. Report once, and
-              we&apos;ll search everywhere for you in real time.
+              We&apos;re building an AI-powered lost & found platform that actually works. 
+              Join our waitlist to be among the first to experience it when we launch.
             </Typography>
             <div className="flex flex-row gap-2 items-center">
               <Button
@@ -51,22 +51,19 @@ const HomeHero = () => {
                 Join the Waitlist
                 <ArrowRight />
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="shadow-primary-100 shadow-md"
-              >
-                How it works
-              </Button>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 items-center mt-2">
               <div className="flex flex-row gap-2 items-center">
                 <CheckCircleIcon className="text-primary-600" />
-                <Typography variant="smallText">Real-time Matches</Typography>
+                <Typography variant="smallText">Early Access</Typography>
               </div>
               <div className="flex flex-row gap-2 items-center">
                 <CheckCircleIcon className="text-primary-600" />
-                <Typography variant="smallText">Real-time Matches</Typography>
+                <Typography variant="smallText">Launch Updates</Typography>
+              </div>
+              <div className="flex flex-row gap-2 items-center">
+                <CheckCircleIcon className="text-primary-600" />
+                <Typography variant="smallText">Free to Join</Typography>
               </div>
             </div>
           </div>

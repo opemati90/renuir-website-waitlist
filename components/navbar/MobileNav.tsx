@@ -40,7 +40,14 @@ const MobileNav = () => {
           <SheetHeader className="text-left">
             <SheetTitle className="mt-8 mb-12 flex flex-wrap justify-between items-end">
               <Link href="/">
-                <Image src={Logo} alt="Accelerate Africa's Logo" width={110} />
+                <Image 
+                  src={Logo} 
+                  alt="Renuir Logo" 
+                  width={120}
+                  height={34}
+                  className="h-8 w-auto"
+                  priority
+                />
               </Link>
 
               <Link href="/login" className="mt-4">

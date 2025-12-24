@@ -28,8 +28,8 @@ export const TailoredForEveryone = () => {
           variant="h4"
           className="text-dark-600 font-medium mt-1 leading-7"
         >
-          Whether you manage a venue or just lost your keys, Renuir simplifies
-          the recovery process.
+          Whether you manage a venue or just lost your keys, Renuir will simplify
+          the recovery process. Coming soon.
         </Typography>
 
         {/* Toggle */}
