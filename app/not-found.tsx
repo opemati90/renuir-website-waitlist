@@ -1,11 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 import { Home, Search, ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 import Nav from "@/components/navbar/Nav";
 import { Footer } from "@/components/shared/Footer";
 
 export default function NotFound() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen flex flex-col">
       <Nav />
@@ -31,7 +36,7 @@ export default function NotFound() {
                 Go to Homepage
               </Button>
             </Link>
-            <Link href="#waitlist">
+            <Link href="/#waitlist">
               <Button variant="outline" size="lg" className="w-full sm:w-auto flex items-center gap-2">
                 <Search className="h-5 w-5" />
                 Join the Waitlist
@@ -41,7 +46,7 @@ export default function NotFound() {
               variant="ghost" 
               size="lg" 
               className="w-full sm:w-auto flex items-center gap-2"
-              onClick={() => window.history.back()}
+              onClick={() => router.back()}
             >
               <ArrowLeft className="h-5 w-5" />
               Go Back
