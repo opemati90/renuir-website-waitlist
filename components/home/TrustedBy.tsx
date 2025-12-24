@@ -4,7 +4,7 @@ import { Typography } from "@/components/ui/typography";
 import { trustedByStats } from "../utils/data/homeItems";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Variants";
-import { Card } from "../ui/Card";
+import { Card } from "../ui/card";
 
 export const TrustedByStats = () => {
   return (

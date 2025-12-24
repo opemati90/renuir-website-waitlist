@@ -11,7 +11,7 @@ import { faqs } from "../utils/data/homeItems";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Variants";
 import { HelpCircle, Mail } from "lucide-react";
-import { Card } from "../ui/Card";
+import { Card } from "../ui/card";
 
 export const FAQSection = () => {
   return (

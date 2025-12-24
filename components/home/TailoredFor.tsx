@@ -5,7 +5,7 @@ import { Typography } from "@/components/ui/typography";
 import { features } from "../utils/data/homeItems";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "../Variants";
-import { Card } from "../ui/Card";
+import { Card } from "../ui/card";
 
 export const TailoredForEveryone = () => {
   const [audience, setAudience] = useState<"business" | "consumer">("business");

@@ -6,7 +6,7 @@ import { Loststat, times } from "../utils/data/homeItems";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Variants";
-import { Card } from "../ui/Card";
+import { Card } from "../ui/card";
 
 export const LostSomething = () => {
   return (

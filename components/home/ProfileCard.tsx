@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Typography } from "../ui/typography";
-import { Badge } from "../ui/Badge";
+import { Badge } from "../ui/badge";
 import { CheckCircle2 } from "lucide-react";
 
 interface Certification {
