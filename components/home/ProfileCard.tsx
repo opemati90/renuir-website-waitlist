@@ -23,13 +23,13 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
   name = "Renuir User",
   title = "Lost & Found Specialist",
   certifications = [
-    { title: "Lost Item Recovery", completed: true },
-    { title: "AI Matching Specialist", progress: 85 },
+    { title: "Lost Item Recovery", progress: 85 },
+    { title: "AI Matching Specialist", progress: 70 },
   ],
   badges = [
-    { name: "Kubernetes", stars: 3 },
-    { name: "PyTorch", stars: 3 },
-    { name: "Python", stars: 3 },
+    { name: "Item Matching", stars: 3 },
+    { name: "Verification", stars: 3 },
+    { name: "Recovery", stars: 2 },
   ],
 }) => {
   return (
@@ -40,7 +40,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
       whileHover={{ scale: 1.02, y: -4 }}
       className="relative p-8 rounded-3xl bg-[#141414] border border-white/10 shadow-2xl hover:border-[#026dc7]/50 hover:shadow-[#026dc7]/20 transition-all duration-500"
     >
-      {/* Profile Header */}
+      {/* Profile Header - Picture and Name Side by Side */}
       <div className="flex items-center gap-4 mb-8">
         <div className="relative">
           <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#026dc7] to-[#0357a1] flex items-center justify-center text-white font-bold text-xl">
@@ -58,12 +58,12 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
         </div>
       </div>
 
-      {/* Certifications Section */}
+      {/* Certifications Section - Two Cards Side by Side */}
       <div className="mb-8">
         <Typography variant="h6" className="text-white font-bold mb-4 text-sm uppercase tracking-wider">
           Certifications
         </Typography>
-        <div className="space-y-3">
+        <div className="grid grid-cols-2 gap-3">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
@@ -72,14 +72,9 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
               transition={{ delay: 0.4 + index * 0.1 }}
               className="p-4 rounded-xl bg-[#1a1a1a] border border-white/5 hover:border-[#026dc7]/30 transition-colors"
             >
-              <div className="flex items-center justify-between mb-2">
-                <Typography variant="smallText" className="text-white font-semibold text-sm">
-                  {cert.title}
-                </Typography>
-                {cert.completed && (
-                  <CheckCircle2 className="h-4 w-4 text-green-500" />
-                )}
-              </div>
+              <Typography variant="smallText" className="text-white font-semibold text-sm mb-3">
+                {cert.title}
+              </Typography>
               {cert.progress !== undefined && (
                 <div className="w-full h-2 bg-[#0a0a0a] rounded-full overflow-hidden">
                   <motion.div
@@ -88,6 +83,11 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                     transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
                     className="h-full bg-gradient-to-r from-[#026dc7] to-[#38a9f8] rounded-full"
                   />
+                </div>
+              )}
+              {cert.completed && (
+                <div className="mt-2 flex items-center justify-end">
+                  <CheckCircle2 className="h-4 w-4 text-green-500" />
                 </div>
               )}
             </motion.div>
@@ -116,4 +116,3 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
     </motion.div>
   );
 };
-

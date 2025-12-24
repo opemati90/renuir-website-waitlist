@@ -6,12 +6,12 @@ import { Slot } from "@radix-ui/react-slot";
 const typographyVariants = cva("text-foreground", {
   variants: {
     variant: {
-      h1: "scroll-m-20 text-5xl font-bold tracking-[-0.02em] leading-[1.1] lg:text-7xl xl:text-8xl text-white",
-      h2: "scroll-m-20 text-4xl font-bold tracking-[-0.02em] leading-[1.15] lg:text-6xl xl:text-7xl text-white",
-      h3: "scroll-m-20 text-3xl font-bold tracking-tight leading-[1.2] lg:text-5xl text-white",
-      h4: "scroll-m-20 text-2xl font-bold tracking-tight leading-[1.25] lg:text-4xl text-white",
-      h5: "scroll-m-20 text-xl font-semibold tracking-tight leading-[1.3] lg:text-3xl text-white",
-      h6: "scroll-m-20 text-lg font-semibold tracking-tight leading-[1.35] lg:text-xl text-white",
+      h1: "scroll-m-20 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-[-0.02em] leading-[1.05] text-white",
+      h2: "scroll-m-20 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-[-0.02em] leading-[1.1] text-white",
+      h3: "scroll-m-20 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] text-white",
+      h4: "scroll-m-20 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.2] text-white",
+      h5: "scroll-m-20 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-[1.25] text-white",
+      h6: "scroll-m-20 text-lg md:text-xl font-semibold tracking-tight leading-[1.3] text-white",
       p: "leading-relaxed text-[#e5e5e5] [&:not(:first-child)]:mt-6",
       div: "leading-relaxed text-[#e5e5e5]",
       blockquote: "mt-6 border-l-4 border-primary-600 pl-6 italic text-[#e5e5e5]",

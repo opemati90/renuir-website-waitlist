@@ -34,7 +34,7 @@ export const Badge: React.FC<BadgeProps> = ({
             {[...Array(stars)].map((_, i) => (
               <Star
                 key={i}
-                className="h-2.5 w-2.5 fill-[#026dc7] text-[#026dc7]"
+                className="h-2.5 w-2.5 fill-[#fbbf24] text-[#fbbf24]"
               />
             ))}
           </div>

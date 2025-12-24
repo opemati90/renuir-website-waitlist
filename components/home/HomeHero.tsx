@@ -3,81 +3,77 @@
 import React from "react";
 import { Typography } from "../ui/typography";
 import { Button } from "../ui/button";
-import { ArrowRight, Search, Zap } from "lucide-react";
+import { ArrowRight, Fingerprint, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Variants";
-import { ProfileCard } from "./ProfileCard";
 
 const HomeHero = () => {
   return (
     <section className="relative overflow-hidden bg-[#0a0a0a] pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-36">
       <div className="app-container relative">
-        {/* Split Layout: Left Text, Right Profile Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Headline and CTA */}
+        {/* Centered Layout */}
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8 md:space-y-12">
+          {/* Main Heading with Embedded Icons */}
           <motion.div
-            variants={fadeIn("right", "tween", 0.1, 0.8)}
+            variants={fadeIn("up", "tween", 0.1, 0.8)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 md:space-y-8"
           >
-            {/* Main Heading with Color Variations */}
-            <div className="space-y-6">
-              <div className="flex flex-wrap items-center gap-3 leading-[1.1]">
-                <span className="text-5xl md:text-6xl lg:text-7xl font-bold text-white">
-                  Lost it?
-                </span>
-                <span className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#026dc7]">
-                  Renuir
-                </span>
-                <span className="text-5xl md:text-6xl lg:text-7xl font-bold text-white">
-                  it.
-                </span>
-              </div>
-              
-              <div className="flex flex-wrap items-center gap-2 text-4xl md:text-5xl lg:text-6xl font-bold">
-                <span className="text-white">The future of lost & found is</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-white">human</span>
-                  <Search className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-[#026dc7]" />
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-white">+</span>
-                  <Zap className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-[#026dc7]" />
-                  <span className="text-white">AI</span>
-                </div>
-              </div>
+            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 leading-[1.1]">
+              <span className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#9ca3af]">
+                The future of lost & found is
+              </span>
             </div>
-
-            {/* Description */}
-            <Typography variant="lead" className="text-lg md:text-xl text-[#9ca3af] max-w-xl leading-relaxed">
-              We help you report lost items, track matches in real-time, and reunite with your belongings through intelligent AI-powered matching.
-            </Typography>
-
-            {/* CTA Button */}
-            <div className="pt-4">
-              <a href="/#waitlist">
-                <Button
-                  size="lg"
-                  className="h-14 px-10 text-lg font-bold rounded-lg border-2 border-[#026dc7] bg-transparent text-[#026dc7] hover:bg-[#026dc7] hover:text-white transition-all"
-                >
-                  Join The Community
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </a>
+            
+            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 leading-[1.1]">
+              <span className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white">
+                h
+              </span>
+              <Fingerprint className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 xl:h-24 xl:w-24 text-[#026dc7] inline-block" />
+              <span className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white">
+                man
+              </span>
+              <span className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white">
+                {" "}+{" "}
+              </span>
+              <Sparkles className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 xl:h-24 xl:w-24 text-[#026dc7] inline-block" />
+              <span className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white">
+                I
+              </span>
             </div>
           </motion.div>
 
-          {/* Right Column: Profile Card */}
+          {/* Sub-headline */}
           <motion.div
-            variants={fadeIn("left", "tween", 0.2, 0.8)}
+            variants={fadeIn("up", "tween", 0.2, 0.8)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="flex justify-center lg:justify-end"
           >
-            <ProfileCard />
+            <Typography variant="lead" className="text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed">
+              We help you report lost items, track matches in real-time, and reunite with your belongings through intelligent AI-powered matching.
+            </Typography>
+          </motion.div>
+
+          {/* CTA Button - Dark background with Renuir blue border */}
+          <motion.div
+            variants={fadeIn("up", "tween", 0.3, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="pt-4"
+          >
+            <a href="/#waitlist">
+              <Button
+                size="lg"
+                className="h-14 px-10 text-lg font-bold rounded-lg border-2 border-[#026dc7] bg-[#141414] text-white hover:bg-[#1a1a1a] transition-all"
+              >
+                Join The Waitlist
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>

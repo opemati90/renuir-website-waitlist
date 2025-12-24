@@ -6,6 +6,7 @@ import { EarlyAccessSection } from "@/components/home/HomeWaitlist";
 import { LostSomething } from "@/components/home/LostSomething";
 import { TailoredForEveryone } from "@/components/home/TailoredFor";
 import { TrustedByStats } from "@/components/home/TrustedBy";
+import { ProfileCardSection } from "@/components/home/ProfileCardSection";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
 
 const SECTIONS = [
   { Component: HomeHero, className: "mt-32 md:mt-40 lg:mt-48" },
+  { Component: ProfileCardSection, className: "mt-16 md:mt-24 lg:mt-32" },
   { Component: TrustedByStats, className: "mt-16 md:mt-24 lg:mt-32" },
   { Component: LostSomething, className: "mt-16 md:mt-24 lg:mt-32" },
   { Component: TailoredForEveryone, className: "mt-16 md:mt-24 lg:mt-32" },
