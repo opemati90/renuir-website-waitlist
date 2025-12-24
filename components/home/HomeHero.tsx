@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import Image from "next/image";
 import { Typography } from "../ui/typography";
 import { Button } from "../ui/button";
 import { ArrowRight, CheckCircleIcon } from "lucide-react";
@@ -9,6 +10,8 @@ import { transition1 } from "../Transition";
 import { fadeIn } from "../Variants";
 
 const HomeHero = () => {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <motion.section className="bg-linear-to-b from-white to-primary-10 pt-12">
       <div className="app-container flex flex-col md:flex-row gap-12 basis items-center pb-20">
@@ -71,15 +74,30 @@ const HomeHero = () => {
           </div>
         </motion.div>
         <div className="basis-full md:basis-[1/2] ">
-          <motion.img
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            exit={{ scale: 0 }}
-            transition={transition1}
-            src="/images/hero.png"
-            alt="renuir image"
-            className="max-w-120"
-          />
+          {!imageError ? (
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              exit={{ scale: 0 }}
+              transition={transition1}
+            >
+              <Image
+                src="/images/hero.png"
+                alt="Illustration showing how Renuir helps people find their lost items using AI-powered matching technology"
+                width={600}
+                height={600}
+                className="max-w-full h-auto"
+                priority
+                onError={() => setImageError(true)}
+              />
+            </motion.div>
+          ) : (
+            <div className="w-full h-96 bg-primary-50 rounded-2xl flex items-center justify-center">
+              <Typography variant="h4" className="text-primary-600 text-center px-4">
+                Renuir - AI-Powered Lost & Found Platform
+              </Typography>
+            </div>
+          )}
         </div>
       </div>
     </motion.section>

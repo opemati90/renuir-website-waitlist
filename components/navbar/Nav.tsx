@@ -30,21 +30,25 @@ const Nav = () => {
         </Link>
 
         <div className="hidden lg:flex items-center space-x-4">
-          {menuItems.map((item, index) => (
-            <div key={index} className="relative group">
-              <Link
-                href={item.href}
-                className={clsx(
-                  pathname === item.href || pathname.startsWith(item.href + "/")
-                    ? "text-primary"
-                    : "text-foreground hover:text-primary-700",
-                  "px-4 font-semibold"
-                )}
-              >
-                {item.name}
-              </Link>
-            </div>
-          ))}
+          {menuItems.map((item, index) => {
+            const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+            return (
+              <div key={index} className="relative group">
+                <Link
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={clsx(
+                    isActive
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary-700",
+                    "px-4 font-semibold focus-visible:outline-2 focus-visible:outline-primary-600 focus-visible:outline-offset-2 rounded"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              </div>
+            );
+          })}
           <Link href="#waitlist" className="hidden lg:block">
             <Button variant="default">Join the Waitlist</Button>
           </Link>

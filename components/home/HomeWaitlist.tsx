@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 
-import { Mail, Loader2 } from "lucide-react";
+import { Mail, Loader2, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Variants";
 
@@ -27,6 +27,7 @@ const formSchema = z.object({
 export const EarlyAccessSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -37,15 +38,42 @@ export const EarlyAccessSection = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
+    setError(null);
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Waitlist email:", values.email);
+      // Simulate API call - replace with actual API endpoint
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: values.email }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        if (response.status === 409) {
+          throw new Error("This email is already on the waitlist.");
+        } else if (response.status === 400) {
+          throw new Error(errorData.error || "Please enter a valid email address.");
+        } else if (response.status >= 500) {
+          throw new Error("Our servers are experiencing issues. Please try again in a few moments.");
+        } else {
+          throw new Error(errorData.error || "Something went wrong. Please try again.");
+        }
+      }
+
+      const data = await response.json();
+      console.log("Waitlist email submitted:", values.email);
       setIsSubmitted(true);
       form.reset();
       setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (error) {
-      console.error("Error submitting form:", error);
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Unable to connect. Please check your internet connection and try again.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -125,6 +153,12 @@ export const EarlyAccessSection = () => {
           </form>
         </Form>
 
+        {error && (
+          <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
+            <AlertCircle className="h-5 w-5 text-red-600 shrink-0 mt-0.5" />
+            <p className="text-sm text-red-700 font-medium">{error}</p>
+          </div>
+        )}
         {isSubmitted && (
           <p className="mt-4 text-sm text-primary-600 font-medium">
             Thank you! We&apos;ll notify you when Renuir launches.

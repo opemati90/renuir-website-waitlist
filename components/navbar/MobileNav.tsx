@@ -31,7 +31,11 @@ const MobileNav = () => {
     <section className="lg:hidden">
       <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
         <SheetTrigger asChild>
-          <button aria-label="Open menu">
+          <button 
+            aria-label="Open menu"
+            aria-expanded={isSheetOpen}
+            className="focus-visible:outline-2 focus-visible:outline-primary-600 focus-visible:outline-offset-2 rounded p-1"
+          >
             <Menu size={28} className="text-foreground" />
           </button>
         </SheetTrigger>
@@ -56,25 +60,30 @@ const MobileNav = () => {
             </SheetTitle>
 
             <div className="flex flex-col space-y-5 pb-5">
-              {menuItems.map((item) => (
-                <div key={item.name}>
-                  <Link href={item.href}>
-                    <Typography
-                      variant="h3"
-                      as="div"
+              {menuItems.map((item) => {
+                const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+                return (
+                  <div key={item.name}>
+                    <Link 
+                      href={item.href}
+                      aria-current={isActive ? "page" : undefined}
                       className={clsx(
-                        pathname === item.href ||
-                          pathname.startsWith(item.href + "/")
+                        isActive
                           ? "text-primary-600"
                           : "text-foreground hover:text-gray-500",
-                        "font-medium"
+                        "font-medium focus-visible:outline-2 focus-visible:outline-primary-600 focus-visible:outline-offset-2 rounded block py-2"
                       )}
                     >
-                      {item.name}
-                    </Typography>
-                  </Link>
-                </div>
-              ))}
+                      <Typography
+                        variant="h3"
+                        as="div"
+                      >
+                        {item.name}
+                      </Typography>
+                    </Link>
+                  </div>
+                );
+              })}
             </div>
           </SheetHeader>
         </SheetContent>
